@@ -1,0 +1,22 @@
+
+body {
+  font-family: Helvetica, arial, sans-serif;
+  background-color:#b01e60;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3em;
+}
+
+.winClass {
+  background-color: #0b94a6ec;
+  color: #d1ab10;
+}
+
+#content{
+	margin:auto;
+}

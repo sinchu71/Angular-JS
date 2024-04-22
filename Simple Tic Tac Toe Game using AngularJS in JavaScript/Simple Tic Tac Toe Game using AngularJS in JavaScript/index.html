@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script type="text/javascript" src="utils.js"></script>
+    <script data-require="angular.js@1.5.5" data-semver="1.5.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="tictactoe" ng-controller="MainCtrl">
+		<center><h1>Tic Tac Toe</h1></center>
+		
+		<center><h3>You are:
+		<label ng-repeat="player in players">
+		<input ng-disabled="gameStarted" ng-click="selectPlayer(player)" ng-model="$parent.selectedPlayer" type="radio" type="radio" name="playerinput" value="{{player}}" />
+		{{player}}
+		</label></h3>
+		
+		<br />
+		<strong>{{currentPlayer}}'s moves</strong>
+		</center>
+		<br /> <br />
+		
+		<table id="content"border="1">
+		<tr ng-repeat="row in [0, 1, 2]">
+			<td ng-class="getHighlighted(row, col) ? 'winClass' : ''" ng-repeat="col in [0,1,2]" ng-click="setCellValue(selectedPlayer, row, col);">
+			{{ getCellText(row, col) }}
+			</td>
+		</tr>
+		</table>
+		
+		<center><h2 ng-if="winner">{{winner}} is the winner. <button type="button" ng-click="resetGame()">Reset Game</button></h2></center>
+    
+  </body>
+
+</html>
